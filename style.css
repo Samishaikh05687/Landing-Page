@@ -1,0 +1,267 @@
+@font-face {
+  font-family: neu;
+  src: url(./NeueMontreal-Medium.otf);
+}
+
+@font-face {
+  font-family: voyage;
+  font-weight: 100;
+  src: url(./voyage-bold.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #e9e1c5;
+}
+.nav-container {
+  width: 100%;
+  position: relative;
+}
+.nav {
+  width: 95%;
+  margin: auto;
+  padding: 2em 0;
+  display: flex;
+  border-bottom: 1px solid black;
+}
+
+.nav-item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-item:nth-child(2) {
+  flex: 4;
+  gap: 3rem;
+}
+.nav-item:first-child {
+  margin-right: auto;
+  text-align: left;
+}
+
+.nav-item:last-child {
+  margin-left: auto;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: black;
+  font-family: "neu";
+}
+
+.nav-logo a {
+  font-family: "voyage";
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.nav-cta a {
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.nav-links {
+  padding: 0 2rem;
+  font-size: 16px;
+}
+
+
+.nav-links a{
+  --c:linear-gradient(#000 0 0); /* update the color here */
+  
+  padding-bottom: 5px;
+  background: var(--c), var(--c);
+  background-size: .3em .1em;
+  background-position:50% 100%;
+  background-repeat: no-repeat;
+  transition: .3s linear, background-size .3s .2s linear;
+}
+.nav-links a:hover {
+  background-size: 40% .1em;
+  background-position: 10% 100%, 90% 100%;
+}
+
+@media (max-width: 900px) {
+  .nav {
+    width: 100%;
+  }
+  .nav-links,
+  .nav-cta {
+    display: none;
+  }
+}
+.main-container {
+  position: relative;
+  z-index: 10000;
+  width: 100%;
+}
+
+.main > * {
+  position: relative;
+}
+
+.main {
+  width: 40%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 4rem 0;
+}
+
+p {
+  margin-top: 7rem;
+  font-family: "neu";
+  font-size: 18px;
+  line-height: 1.5rem;
+}
+
+.wrapper {
+  position: fixed;
+  top: 82%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.link_wrapper {
+  position: relative;
+}
+
+.link_wrapper a {
+  display: block;
+  width: 200px;
+  height: 50px;
+  line-height: 50px;
+  font-weight: bold;
+  font-size: 15px;
+  text-decoration: none;
+  background: #ffffff;
+  text-align: center;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  transition: all 0.35s;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  border: 3px solid transparent;
+  position: absolute;
+  transform: rotate(45deg);
+  right: 0;
+  top: 0;
+  z-index: -1;
+  transition: all 0.35s;
+}
+
+.icon svg {
+  width: 30px;
+  position: absolute;
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
+  transform: rotate(-45deg);
+  fill: #000000;
+  transition: all 0.35s;
+}
+
+.link_wrapper a:hover {
+  width: 200px;
+  border: 3px solid #000000;
+  background: transparent;
+  color: #000000;
+}
+
+.link_wrapper a:hover + .icon {
+  border: 3px solid #000000;
+  right: -25%;
+}
+
+h1 {
+  font-family: "voyage";
+  font-weight: 300;
+  font-size: 5vw;
+}
+
+.blog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: animate-blog 4s ease-in-out infinite;
+}
+
+@keyframes animate-blog {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+
+.blog-1 {
+  position: absolute;
+  top: 20%;
+  right: 70%;
+  width: 450px;
+  height: 450px;
+  background: url(img.jpg) no-repeat 50% 50%;
+  background-size: cover;
+}
+.blog-2 {
+  position: absolute;
+  top: 65%;
+  right: 5%;
+  width: 250px;
+  height: 250px;
+  background: url(img-1.jpg) no-repeat 50% 50%;
+  background-size: cover;
+  /* animation-delay: 1s; */
+}
+
+.blog-3 {
+  position: absolute;
+  top: 20%;
+  right: 25%;
+  width: 130px;
+  height: 130px;
+  border: 1px solid black;
+  background: url(img-2.jpg) no-repeat 50% 50%;
+  background-size: cover;
+  /* animation-delay: 1s; */
+}
+
+.gooey {
+  height: 15vw;
+  width: 15vw;
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(to top right, #ef2800, #ff5900);
+  top: 25%;
+  left: 40%;
+  filter: blur(20px);
+  animation-name: gooey;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+@keyframes gooey {
+  from {
+    transform: translate(40%, -10%) skew(15deg);
+  }
+  to {
+    transform: translate(-10%, 10%) skew(-15deg);
+  }
+}
